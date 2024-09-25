@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.logolynx.com/images/logolynx/61/61b46a18dbb06dd3d3275c773d0edf17.jpeg">
+    <title>King's Bed Hotel</title>
+    <link rel="stylesheet" href="reservation.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=0.46">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="index.html"><img src="https://hotelsogo.com/images/logo.jpg" alt="Logo"></a></div>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--<meta name="viewport" content="width=815">-->
+    
+    
+
+    <div class="container">
+        <form action="connect.php" method="POST" class="form-group">
+            <div id="form">
+                <br><h1>Reserve Now</h1>
+
+                <div id="first-group">
+                    <div id="content">
+                        <i class='bx bxs-user'></i>
+                        <input type="text" name="firstname" placeholder="First name" required>
+                    </div>
+                
+                    <div id="content">
+                        <i class='bx bxs-phone'></i>
+                        <input type="tel" name="tel" placeholder="Phone number" maxlength="11" required>
+                    </div>
+
+                    <div id="content">
+                        <i class='bx bxs-location-plus'></i>
+                        <select name="location" required>
+                            <option value="" disabled selected>Location of Reservation</option>
+                            <option value="General Trias Sogo">General Trias Sogo</option>
+                            <option value="Tanza Sogo">Tanza Sogo</option>
+                            <option value="Rosario Sogo">Rosario Sogo</option>
+                            <option value="Kawit Sogo">Kawit Sogo</option>
+                        </select>
+                    </div>
+                    
+
+                    <div id="content">
+                        <span class="checkdate">Check-in Date</span><br>
+                        <i class='bx bx-calendar-heart'></i>
+                        <input type="date" name="checkin_date" min="2024-09-09" max="2025-01-01" required>
+                        <span class="checktime">Check-in Time</span><br>
+                        <i class='bx bx-time-five'></i>
+                        <input type="time" name="checkin_time" required>
+                    </div>
+                </div>
+
+                <div id="second-group">
+                    <div id="content">
+                        <i class='bx bxs-user'></i>
+                        <input type="text" name="lastname" placeholder="Last name" required>
+                    </div>
+
+                    <div id="content">
+                        <i class='bx bx-envelope'></i>
+                        <input type="email" name="email" placeholder="Email address" required>
+                    </div>
+
+                    <div id="content">
+                        <i class='bx bx-bed'></i>
+                        <select name="room" required>
+                            <option value="" disabled selected>Room Type</option>
+                            <option value="Premium Room">Premium Room</option>
+                            <option value="Deluxe Room">Deluxe Room</option>
+                            <option value="Executive Room">Executive Room</option>
+                        </select>
+                    </div>
+
+                    <div id="content">
+                        <span class="outdate">Check-Out Date</span><br>
+                        <i class='bx bx-calendar-heart'></i>
+                        <input type="date" name="checkout_date" required>
+                        <span class="outtime">Check-Out Time</span><br>
+                        <i class='bx bx-time-five'></i>
+                        <input type="time" name="checkout_time" required>
+                    </div>
+                </div>
+
+                <button type="submit" id="submit-btn">Reserve Now!</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
