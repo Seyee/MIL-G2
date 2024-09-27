@@ -1,0 +1,188 @@
+*{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.navbar {
+    background-color: #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-right: 15px;
+    padding-left: 15px;
+    animation: 1s ease-out 0s 1 slideInFromTop;
+    position: fixed; /* Changed to fixed */
+    top: 0;
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 1000; /* Keeps it above other elements */
+    box-shadow: 0 4px 2px -2px gray; /* Optional: Adds shadow for better visibility */
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.logo img{
+    width: 170px;
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+
+}
+li a{
+    color: rgb(68, 68, 68);
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+    
+}
+
+/*HOVER*/
+.logo:hover {
+    transform: scale(0.9);
+}
+a:hover {
+    color: rgb(143, 143, 143);
+}
+body{
+    min-height: 100vh;
+    background-image: url(https://th.bing.com/th/id/R.fd7b996f2e00e3715d4211863b2fdabf?rik=XmXHS9BNUXwGWQ&riu=http%3A%2F%2Fwww.bestwesternplusmeridian.com%2FContent%2Fimages%2FQueen-Room-o.jpg&ehk=dxP298vmMaLYbbBQz9Ls4IOHAz40HDl8EWe4oVTZd%2F8%3D&risl=&pid=ImgRaw&r=0);
+    background-size: cover;
+}
+
+.contact-section{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.contact-info{
+    color: #ffffff;
+    position: relative;
+    top: 90px;
+    left: 80px;
+    max-width: 1000px;
+    line-height: 65px;
+    padding-left: 50px;
+    font-size: 20px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    text-shadow: 1px 1px 5px black;
+
+}
+
+.contact-info i{
+    margin-right: 20px;
+    font-size: 25px;
+    margin-left: 50px;
+
+
+}
+
+.contact-form {
+    max-width: 700px;
+    margin-right: 50px;
+
+}
+
+
+.contact-info, .contact-form{
+    flex: 1;
+}
+
+.contact-form h2{
+    color:  #d7d1c6;
+    text-align: 0px;
+    margin-top: 20px;
+    margin-left: 110px;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px black;
+}
+
+.contact-form .text-box{
+    background-color:  #d7d1c6;
+    color: #080606;
+    border: none;
+    width: cal(50% - 10px);
+    height: 50px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px  rgb(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.contact-form .text{
+    margin: 2px;
+    background-color: #d7d1c6;
+    color: #000000;
+    border: none;
+    width: cal(50% - 10px);
+    height: 50px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px  rgb(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.contact-form .text-box:first-child{
+    margin-right: 15px;
+}
+.contact-form textarea{
+    background:  #d7d1c6;
+    color: #161313;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    min-height: 200px;
+    max-height: 400px;
+    resize: vertical;
+    border-radius: 5px;
+    box-shadow: 0 1px rgba(255, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.contact-form .send-btn{
+    background-color:  #d7d1c6;
+    color: #0d0c0c;
+    border: none;
+    width: (50% - 10px);
+    height: 50px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px  rgb(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.contact-form .text:hover{
+    background-color: rgba(129, 129, 129, 0.719);
+}
+
+.contact-form textarea:hover{
+    background-color: rgba(129, 129, 129, 0.719);
+}
+
+.contact-form .text-box:hover{
+    background-color: rgba(129, 129, 129, 0.719);
+}
+
+.contact-form .send-btn:hover{
+    background-color: rgba(129, 129, 129, 0.719);
+}
+
