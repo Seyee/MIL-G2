@@ -3,13 +3,14 @@
     text-decoration: none;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     background-image: url(https://i.ibb.co/26hzq7K/Untitled-design-9.png);
+    background-size: cover;
 }
 
 /* Navbar Styles */
@@ -18,9 +19,9 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-right: 15px;
     padding-left: 15px;
-    position: relative;
-    top: 0;
+    animation: 1s ease-out 0s 1 slideInFromTop;
     position: fixed;
+    top: 0PX;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 4px 2px -2px gray;
@@ -35,7 +36,7 @@ body {
 }
 
 .logo img {
-    width: 170px;
+    width: 210px;
 }
 
 li {
@@ -50,38 +51,27 @@ li a {
     margin-right: 25px;
 }
 
-/* HOVER */
-.logo:hover {
-    transform: scale(0.9);
-}
-
 a:hover {
     color: rgb(161, 161, 161);
 }
 
 /* Room Container */
 .card-container {
+    width: 70%; /* Set the width of the container */
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    margin-top: 100px;
-    border: 0px dashed rgb(255, 255, 255);
-    max-width: 1200px; /* Set max width for container */
-    margin-left: auto;  /* Center container */
-    margin-right: auto; /* Center container */
-    padding: 20px; /* Add some padding inside the container */
+    margin: 100px auto 0; /* Center the container horizontally */
+    padding: 20px;
+    justify-content: space-between; /* Ensure space between cards */
 }
 
 .card {
-    margin: 20px;
+    width: calc(33.33% - 20px); /* Three cards per row, minus margin */
+    margin-bottom: 20px; /* Space below each card */
     background-color: #f0f0f0;
     border-radius: 8px;
-    overflow: hidden;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    min-height: 400px;
-    max-width: 300px; /* Optional: Set max width for cards */
+    cursor: pointer;
 }
 
 .card img {
@@ -94,11 +84,63 @@ a:hover {
     text-align: center;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 .card:hover {
     transform: scale(0.985);
     box-shadow: 3px 3px 5px gray;
 }
+
+/* Pop-up Modal CSS */
+.pop-up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.pop-up-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: center;
+}
+
+.pop-up-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.pop-up-content h3 {
+    margin-top: 10px;
+}
+
+.pop-up-input:checked + .pop-up {
+    display: flex;
+}
+
+.close-btn {
+    position: absolute;
+    top: 425px;
+    right: 980px;
+    font-size: 35px;
+    cursor: pointer;
+    color: #f0f0f0;
+    text-shadow: 2px 2px 5px rgb(219, 219, 219);
+}
+
+.close-btn:hover {
+    color: rgb(173, 173, 173);
+}
+
+.pop-up-input {
+    display: none; /* Hide the checkbox */
+}
+
+/* Pop-up close button styling */

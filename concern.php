@@ -21,12 +21,13 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
 
-if ($stmt->execute()) {
-    echo "Your concern has been submitted successfully.";
+if ($conn->query($sql) === TRUE) {
+    // Redirect to index.html after successful signup
+    header("Location: concern.html");
+    exit;
 } else {
-    echo "Error: " . $stmt->error;
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
 $stmt->close();
 $conn->close();
 ?>

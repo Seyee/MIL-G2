@@ -26,7 +26,7 @@
 
 }
 .logo img{
-    width: 170px;
+    width: 210px;
 }
 
 li{
@@ -39,7 +39,7 @@ li a{
     font-size: 18px;
     font-weight: bold;
     margin-right: 25px;
-    
+    right: 20px;
 }
 
 /*HOVER*/
@@ -65,7 +65,7 @@ body{
 .contact-info{
     color: #ffffff;
     position: relative;
-    top: 90px;
+    top: 120px;
     left: 80px;
     max-width: 1000px;
     line-height: 65px;
@@ -87,6 +87,7 @@ body{
 }
 
 .contact-form {
+    margin-top: 100px;
     max-width: 700px;
     margin-right: 50px;
 

@@ -20,7 +20,7 @@
 
 }
 .logo img{
-    width: 155px;
+    width: x;
 }
 
 
@@ -34,7 +34,7 @@ li a{
     font-size: 18px;
     font-weight: bold;
     margin-right: 25px;
-    
+    right: 20px;
 }
 
 /*HOVER*/

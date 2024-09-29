@@ -24,7 +24,7 @@
 
 }
 .logo img{
-    width: 170px;
+    width: 210px;
 }
 
 
@@ -38,6 +38,7 @@ li a{
     font-size: 18px;
     font-weight: bold;
     margin-right: 25px;
+    right: 20px;
     
 }
 
@@ -77,7 +78,7 @@ body {
 }
 
 .about h1 {
-    margin-top: 50px;
+    margin-top: 80px;
     font-size: 50px;
     color: #ffffff;
     margin-bottom: 25px;

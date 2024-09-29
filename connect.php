@@ -29,7 +29,9 @@ $sql = "INSERT INTO reservations (name, email, phone, address, room_type, checki
         VALUES ('$name', '$email', '$phone', '$address', '$room_type', '$checkin_date', '$checkout_date', '$checkin_time', '$checkout_time')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Reservation successfully made!";
+    // Redirect to index.html after successful signup
+    header("Location: reservation.html");
+    exit;
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

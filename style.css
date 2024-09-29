@@ -39,7 +39,7 @@ body {
 }
 
 .logo img {
-    width: 170px;
+    width: 210px;
 }
 
 li {
@@ -48,6 +48,8 @@ li {
 }
 
 li a {
+    position: relative;
+    right: 20px;
     color: rgb(68, 68, 68);
     font-size: 18px;
     font-weight: bold;
@@ -78,7 +80,7 @@ figure {
 }
 
 .slide img {
-    width: 100%;
+    width: 102%;
 }
 
 body, html {
@@ -91,7 +93,10 @@ body, html {
     position: relative;
     top: 75px;
     overflow: hidden;
+    min-height: 100vh; /* Full height of the viewport */
 }
+
+
 
 @keyframes slide {
     0% {
