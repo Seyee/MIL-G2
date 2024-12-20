@@ -18,16 +18,28 @@
     box-shadow: 0 4px 2px -2px gray; /* Optional: Adds shadow for better visibility */
 }
 
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-right: 15px;
+    padding-left: 15px;
+    animation: 1s ease-out 0s 1 slideInFromTop;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
 .navdiv {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 90px;
 }
 
 .logo img {
-    width: 210px; 
-    height: auto; 
+    width: 210px;
 }
 
 li {
@@ -36,43 +48,21 @@ li {
 }
 
 li a {
+    position: relative;
+    right: 20px;
     color: rgb(68, 68, 68);
     font-size: 18px;
     font-weight: bold;
     margin-right: 25px;
-    right: 20px;
 }
 
-/* HOVER */
-.logo:hover {
-    transform: scale(0.9);
-}
+/* Hover Effects */
 
 a:hover {
     color: rgb(161, 161, 161);
 }
 
 /* FORM */
-
-.date-time {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.date-time div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.date-time label {
-    color: #000000;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
 body {
     background-image: url(https://i.postimg.cc/7hD2JYRp/Untitled-design.png);
     background-size: cover;
@@ -81,7 +71,7 @@ body {
 .container {
     margin-top: 50px;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     min-height: calc(100vh - 70px);
     padding: 20px;
@@ -99,6 +89,7 @@ form {
     gap: 10px;
 }
 
+/* Heading Styles */
 form h2 {
     text-align: center;
     color: rgb(44, 43, 43);
@@ -106,7 +97,9 @@ form h2 {
     text-shadow: 3px 3px 10px rgb(68, 68, 68);
 }
 
-form input {
+form input,
+form select,
+form button {
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #000000;
@@ -127,8 +120,9 @@ form div input {
     min-width: 0;
 }
 
+/* Confirm Button Styles */
 form button {
-    margin-left: 165px;
+    margin-top: 20px; /* Add space between the date fields and the button */
     padding: 10px;
     background-color: rgb(132, 132, 132);
     color: white;
@@ -137,6 +131,7 @@ form button {
     cursor: pointer;
     font-size: 16px;
     transition: all 0.7s ease;
+    width: 100%; /* Makes the button take up the full width of its container */
 }
 
 form button:hover {
@@ -169,3 +164,30 @@ html {
     scroll-behavior: smooth;
 }
 
+.date-time div {
+    display: flex;
+    flex-direction: column; /* Ensure labels stay above inputs */
+    margin-bottom: 0; /* Adjust space between the fields */
+}
+
+
+
+label {
+    margin-bottom: 5px; /* Adds spacing below the label */
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select,
+form input[type="date"] {
+    background-color: white;
+}
+
+form input:focus,
+form select:focus,
+form button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+}

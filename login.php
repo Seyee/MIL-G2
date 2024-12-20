@@ -1,4 +1,5 @@
 <?php
+session_start(); // Start the session
 // Database connection
 $servername = "localhost";
 $username = "root";
@@ -28,8 +29,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Verify the password
         if (password_verify($password, $row['password'])) {
-            // Redirect to dashboard.html on successful login
-            header("Location: dashboard.html");
+            // Set session variable for the logged-in user
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['role'] = $row['role']; // Store the user role in session
+            $_SESSION['user_logged_in'] = true;
+
+            // Redirect to appropriate page based on role
+            if ($_SESSION['role'] == 'admin') {
+                header("Location: admin.php");
+            } else {
+                header("Location: index.php");
+            }
             exit;
         } else {
             $error_message = "Incorrect password!";
@@ -109,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit">Login</button>
 
             <p style="text-align: center; margin-top: 20px;">
-                Don't have an account? <a href="index.php">Sign up here</a>
+                Don't have an account? <a href="signup.php">Sign up here</a>
             </p>
         </form>
     </section>

@@ -5,7 +5,7 @@ session_start();
 if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
     $loginMessage = "Successfully logged in!";
     $showLoginModal = true;
-    unset($_SESSION['user_logged_in']);
+    unset($_SESSION['user_logged_in']); // Unset the session variable after showing the login message
 } else {
     $showLoginModal = false;
 }
@@ -18,7 +18,7 @@ if (isset($_GET['status']) && $_GET['status'] === 'logout_success') {
     $showLogoutModal = false;
 }
 
-// Mpop up for log in required
+// pop up log in required
 if (isset($_GET['reservation']) && !isset($_SESSION['user_id'])) {
     $modalMessage = "You have to login to make reservations";
     $showReservationModal = true;
@@ -33,9 +33,9 @@ if (isset($_GET['reservation']) && !isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
     <style>
-        /* popup */
+        /* Modal styles */
         .modal {
             display: <?php echo ($showLoginModal || $showLogoutModal || $showReservationModal) ? 'block' : 'none'; ?>;
             position: fixed;
@@ -77,31 +77,31 @@ if (isset($_GET['reservation']) && !isset($_SESSION['user_id'])) {
     </style>
 </head>
 <body>
-    <!-- pop up after log in -->
+    <!-- Modal for Successful Login -->
     <?php if ($showLoginModal): ?>
         <div class="modal" style="display: block;">
             <div class="modal-content">
-                <span class="close" onclick="window.location.href='index.php';">&times;</span>
+                <span class="close" onclick="window.location.href='about.php';">&times;</span>
                 <p><?php echo $loginMessage; ?></p>
             </div>
         </div>
     <?php endif; ?>
 
-    <!-- pop up Logout -->
+    <!-- Modal for Logout -->
     <?php if ($showLogoutModal): ?>
         <div class="modal" style="display: block;">
             <div class="modal-content">
-                <span class="close" onclick="window.location.href='index.php';">&times;</span>
+                <span class="close" onclick="window.location.href='about.php';">&times;</span>
                 <p><?php echo $logoutMessage; ?></p>
             </div>
         </div>
     <?php endif; ?>
 
-    <!--Popup log in required -->
+    <!-- Modal for Reservation - Login Required -->
     <?php if ($showReservationModal): ?>
         <div class="modal" style="display: block;">
             <div class="modal-content">
-                <span class="close" onclick="window.location.href='index.php';">&times;</span>
+                <span class="close" onclick="window.location.href='about.php';">&times;</span>
                 <p><?php echo $modalMessage; ?></p>
             </div>
         </div>
@@ -124,77 +124,31 @@ if (isset($_GET['reservation']) && !isset($_SESSION['user_id'])) {
                 <?php else: ?>
                     <li><a href="?reservation=true">Reservation</a></li>
                     <li><a href="login.php" class="login-btn">Login</a></li>
+ <!-- Reservation link when not logged in -->
                 <?php endif; ?>
             </ul>
         </div>
     </nav>
 
-    <!-- Slideshow -->
-    <div class="slider">
-        <div class="slide">
-            <img src="https://i.ibb.co/zrkNtqL/Screenshot-2024-09-27-215940-copy.png" alt="image 1">
+<head>
+    <body>
+        <div class="about">
+            <h1>About Us!</h1>
         </div>
-        <div class="slide">
-            <img src="https://i.ibb.co/7pHtm6G/final.png" alt="image 2">
-        </div>
-        <div class="slide">
-            <img src="https://i.ibb.co/b289TSb/hallway.png" alt="image 3">
-        </div>
-        <div class="slide">
-            <img src="https://i.ibb.co/JkH4xHc/bedroom.png" alt="image 4">
-        </div>
-    </div>
+        <div class="container">
+            <section class="about2">
+                <div class="about-image">
+                    <img src="https://i.ibb.co/frCY686/Untitled-1.jpg">
+                </div>
+                <div class="about-content">
+                    <h2>Our Beginnings</h2>
+                    <p>King's Bed Hotel was established in 2010 to meet the growing demand for exceptional yet affordable lodging in downtown. Recognizing the need for a welcoming and comfortable space, we set out to create a unique experience for travelers seeking quality and convenience.
 
-    <!--Reviews-->
-    <section class="reviews">
-        <div class="reviews-header">
-            <h2>Customer Reviews</h2>
+                        In March 2011, we...<p></p><a href="readmore.php" class="read-more">Read More</a></p>
+                        
+                </div>
+            </section>
         </div>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <img src="https://media.istockphoto.com/id/1364917563/photo/businessman-smiling-with-arms-crossed-on-white-background.jpg?s=612x612&w=0&k=20&c=NtM9Wbs1DBiGaiowsxJY6wNCnLf0POa65rYEwnZymrM=" alt="User 1" class="reviewer-img">
-                <div class="review-content">
-                    <h3>Mark Ezekiel</h3>
-                    <p>"Absolutely loved my stay! The room was clean, the staff was friendly, and the location was perfect."</p>
-                    <div class="rating">⭐⭐⭐⭐⭐</div>
-                </div>
-            </div>
-            <div class="review-card">
-                <img src="https://pbs.twimg.com/profile_images/1008650588697944064/2OghK9Sl_400x400.jpg" alt="User 2" class="reviewer-img">
-                <div class="review-content">
-                    <h3>Sayieeh</h3>
-                    <p>"The view from the room was amazing, and I felt so comfortable. I will definitely come back!"</p>
-                    <div class="rating">⭐⭐⭐⭐⭐</div>
-                </div>
-            </div>
-            <div class="review-card">
-                <img src="https://t4.ftcdn.net/jpg/06/12/37/95/360_F_612379539_nATPRGof8MPSNts37Rvs17xJJrwe4s3N.jpg" alt="User 3" class="reviewer-img">
-                <div class="review-content">
-                    <h3>Rhianne Venice</h3>
-                    <p>"Fantastic service! The amenities were top-notch, and the breakfast was excellent."</p>
-                    <div class="rating">⭐⭐⭐⭐⭐</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </body>
+</head>
 
-    <!--Offers-->
-    <section class="special-offers">
-        <div class="offers-container">
-            <div class="offer">
-                <h3>Weekend Getaway</h3>
-                <p>Book a 2-night stay and get 30% off your weekend getaway!</p>
-                <a href="reservation.php"><button class="offer-btn">Book Now</button></a>
-            </div>
-            <div class="offer">
-                <h3>Early Bird Discount</h3>
-                <p>Save 20% when you book your stay 30 days in advance!</p>
-                <a href="reservation.php"><button class="offer-btn">Book Now</button></a>
-            </div>
-            <div class="offer">
-                <h3>Family Vacation Deal</h3>
-                <p>Stay for 4 nights and get the 5th</p><br>
-                <a href="reservation.php"><button class="offer-btn">Book Now</button></a>
-            </div>
-        </div>
-    </section>

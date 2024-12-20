@@ -11,9 +11,10 @@ body {
     padding: 0;
     background-image: url(https://i.ibb.co/26hzq7K/Untitled-design-9.png);
     background-size: cover;
+    font-family: Arial, sans-serif;
 }
 
-/* Navbar Styles */
+/* Navbar */
 .navbar {
     background-color: #ffffff;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -21,13 +22,11 @@ body {
     padding-left: 15px;
     animation: 1s ease-out 0s 1 slideInFromTop;
     position: fixed;
-    top: 0PX;
+    top: 0;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 4px 2px -2px gray;
 }
-
-
 
 .navdiv {
     display: flex;
@@ -45,11 +44,15 @@ li {
 }
 
 li a {
+    position: relative;
+    right: 20px;
     color: rgb(68, 68, 68);
     font-size: 18px;
     font-weight: bold;
     margin-right: 25px;
 }
+
+/* Hover Effects */
 
 a:hover {
     color: rgb(161, 161, 161);
@@ -57,35 +60,37 @@ a:hover {
 
 /* Room Container */
 .card-container {
-    width: 70%; /* Set the width of the container */
+    width: 90%;
+    margin: 100px auto 0;
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    margin: 100px auto 0; /* Center the container horizontally */
-    padding: 20px;
-    justify-content: space-between; /* Ensure space between cards */
+    gap: 15px;
+    justify-content: center; /* Center cards for smaller screens */
 }
 
 .card {
-    width: calc(33.33% - 20px); /* Three cards per row, minus margin */
-    margin-bottom: 20px; /* Space below each card */
+    width: calc(100% / 3 - 20px); /* Three cards per row */
     background-color: #f0f0f0;
     border-radius: 8px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card img {
     width: 100%;
     height: auto;
+    border-radius: 8px 8px 0 0;
 }
 
 .card-content {
-    padding: 15px;
+    padding: 10px;
     text-align: center;
 }
 
 .card:hover {
-    transform: scale(0.985);
+    transform: scale(1.01);
     box-shadow: 3px 3px 5px gray;
 }
 
@@ -97,7 +102,6 @@ a:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    
     display: none;
     justify-content: center;
     align-items: center;
@@ -108,8 +112,10 @@ a:hover {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    max-width: 500px;
+    max-width: 90%;
+    width: 500px;
     text-align: center;
+    position: relative;
 }
 
 .pop-up-content img {
@@ -127,20 +133,34 @@ a:hover {
 
 .close-btn {
     position: absolute;
-    top: 425px;
-    right: 980px;
-    font-size: 35px;
+    top: -3px;
+    right: 3px;
+    font-size: 25px;
     cursor: pointer;
-    color: #f0f0f0;
-    text-shadow: 2px 2px 5px rgb(219, 219, 219);
+    color: #333;
 }
 
 .close-btn:hover {
-    color: rgb(173, 173, 173);
+    color: #555;
 }
 
 .pop-up-input {
-    display: none; /* Hide the checkbox */
+    display: none;
 }
 
-/* Pop-up close button styling */
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .pop-up-content {
+        padding: 15px;
+    }
+}
+
